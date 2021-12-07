@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.chat2.mapper.ChatRoomMapper">
+
+	<insert id="createRoom" parameterType="ChatRoom"
+	useGeneratedKeys="true" keyProperty="id" keyColumn="ChatRoom.id">
+		insert into chatroom(title, master_id)
+		values(#{title}, #{masterId})
+	</insert>
+	
+	<select id="getAllDataList" resultType="com.example.chat2.model.ChatRoom">
+    	SELECT * FROM chatroom;
+  	</select>
+
+	<select id="getAllChatRooms" resultType="Chatroom">
+	select id, title
+	from chatroom
+	</select>
+	
+	<select id="getRoomTitle" resultType="String" parameterType="long">
+	select title
+	from chatroom
+	where id=#{id}
+	</select>
+</mapper>
+
+<!-- <mapper namespace="com.example.chat1.mapper.ChatRoomMapper">
+  <select id="getAllDataList" resultType="com.example.chat1.model.ChatRoom">
+    SELECT * FROM chatroom;
+  </select>
+
+</mapper> -->

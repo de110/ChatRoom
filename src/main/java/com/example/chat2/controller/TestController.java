@@ -1,31 +1,31 @@
-// package com.example.chat1.controller;
+package com.example.chat2.controller;
 
-// import java.util.List;
+import java.util.List;
 
-// // import com.example.chat1.dto.chatroom;
-// import com.example.chat1.model.ChatRoom;
+// import com.example.chat1.dto.chatroom;
+import com.example.chat2.model.ChatRoom;
 
-// // import com.example.chat1.service.TestService;
-// import com.example.chat1.service.IChatRoomService;
+// import com.example.chat1.service.TestService;
+import com.example.chat2.service.IChatRoomService;
 
-// import org.springframework.web.bind.annotation.GetMapping;
-// import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-// import lombok.RequiredArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
-// @RequiredArgsConstructor
-// @RestController
-// public class TestController {
-// private final IChatRoomService testService;
+@RequiredArgsConstructor
+@RestController
+public class TestController {
+    private final IChatRoomService testService;
 
-// @GetMapping("/hello")
-// public String hello() {
-// return "Hello World";
-// }
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello World";
+    }
 
-// @GetMapping("/test")
-// public List<ChatRoom> test() {
-// return testService.getAllDataList();
-// // return testService.getAllDataList();
-// }
-// }
+    @GetMapping("/test")
+    public List<ChatRoom> test() {
+        return testService.getAllDataList();
+        // return testService.getAllDataList();
+    }
+}
